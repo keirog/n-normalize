@@ -1,0 +1,7 @@
+{
+	"name": "ft-next-normalize",
+	"version": "0.0.0",
+	"devDependencies": {
+		"origami-build-tools": "^3.3.5"
+	}
+}
