@@ -1,80 +1,87 @@
-/**
- * Prevent iOS and IE text size adjust after device orientation change,
- * without disabling user zoom.
- */
+$_n-normalize_applied: false !default;
 
-html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
+@if (not $_n-normalize_applied) {
 
-/**
- * Remove default margin.
- */
+	/**
+	 * Prevent iOS and IE text size adjust after device orientation change,
+	 * without disabling user zoom.
+	 */
 
-body {
-	margin: 0;
-}
+	html {
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+	}
 
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
+	/**
+	 * Remove default margin.
+	 */
 
-img {
-	border: 0;
-}
+	body {
+		margin: 0;
+	}
 
-/**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
+	/**
+	 * Remove border when inside `a` element in IE 8/9/10.
+	 */
 
-button,
-input,
-optgroup,
-select,
-textarea {
-	color: inherit; /* 1 */
-	font: inherit; /* 2 */
-	margin: 0; /* 3 */
-}
+	img {
+		border: 0;
+	}
 
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
+	/**
+	 * 1. Correct color not being inherited.
+	 *    Known issue: affects color of disabled elements.
+	 * 2. Correct font properties not being inherited.
+	 * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+	 */
 
-button {
-	overflow: visible;
-}
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		color: inherit; /* 1 */
+		font: inherit; /* 2 */
+		margin: 0; /* 3 */
+	}
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
+	/**
+	 * Address `overflow` set to `hidden` in IE 8/9/10/11.
+	 */
 
-button,
-select {
-	text-transform: none;
-}
+	button {
+		overflow: visible;
+	}
 
-/**
- * Remove inner padding and border in Firefox 4+.
- */
+	/**
+	 * Address inconsistent `text-transform` inheritance for `button` and `select`.
+	 * All other form control elements do not inherit `text-transform` values.
+	 * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+	 * Correct `select` style inheritance in Firefox.
+	 */
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
+	button,
+	select {
+		text-transform: none;
+	}
 
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
+	/**
+	 * Remove inner padding and border in Firefox 4+.
+	 */
 
-textarea {
-	overflow: auto;
+	button::-moz-focus-inner,
+	input::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+	/**
+	 * Remove default vertical scrollbar in IE 8/9/10/11.
+	 */
+
+	textarea {
+		overflow: auto;
+	}
+
+	$_n-normalize_applied: true !global;
 }
