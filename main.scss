@@ -89,6 +89,7 @@ $_n-normalize_applied: false !default;
 
 	:focus {
 		outline: thin dotted;
+		outline-offset: 1px;
 	}
 
 	$_n-normalize_applied: true !global;
