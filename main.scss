@@ -83,5 +83,14 @@ $_n-normalize_applied: false !default;
 		overflow: auto;
 	}
 
+	/**
+	 * Standardise outline styles
+	 */
+
+	:focus {
+		outline: thin dotted;
+		outline-offset: 1px;
+	}
+
 	$_n-normalize_applied: true !global;
 }
