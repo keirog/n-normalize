@@ -3,8 +3,7 @@ $_n-normalize_applied: false !default;
 @if (not $_n-normalize_applied) {
 
 	/**
-	 * Prevent iOS and IE text size adjust after device orientation change,
-	 * without disabling user zoom.
+	 * Prevent adjustments of font size after orientation changes in IE and iOS.
 	 */
 
 	html {
@@ -13,60 +12,183 @@ $_n-normalize_applied: false !default;
 	}
 
 	/**
-	 * Remove default margin.
+	 * Remove the margin in all browsers (opinionated).
 	 */
 
 	body {
 		margin: 0;
 	}
 
+	/* Links
+	   ===================================================================== */
+
 	/**
-	 * Remove border when inside `a` element in IE 8/9/10.
+	 * Remove the gray background on active links in IE 10.
 	 */
 
-	img {
-		border: 0;
+	a {
+		background-color: transparent;
 	}
 
 	/**
-	 * 1. Correct color not being inherited.
-	 *    Known issue: affects color of disabled elements.
-	 * 2. Correct font properties not being inherited.
-	 * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+	 * Remove the outline on focused links when they are also active or hovered
+	 * in all browsers (opinionated).
+	 */
+
+	a:active,
+	a:hover {
+		outline-width: 0;
+	}
+
+	/* Text-level semantics
+	   ===================================================================== */
+
+	/**
+	 * 1. Remove the bottom border in Firefox 39-.
+	 * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+	 */
+
+	abbr[title] {
+		border-bottom: none; /* 1 */
+		text-decoration: underline; /* 2 */
+		text-decoration: underline dotted; /* 2 */
+	}
+
+	/**
+	 * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+	 */
+
+	b,
+	strong {
+		font-weight: inherit;
+	}
+
+	/**
+	 * Add the correct font weight in Chrome, Edge, and Safari.
+	 */
+
+	b,
+	strong {
+		font-weight: bolder;
+	}
+
+	/**
+	 * Add the correct font style in Android 4.3-.
+	 */
+
+	dfn {
+		font-style: italic;
+	}
+
+	/**
+	 * Prevent `sub` and `sup` elements from affecting the line height in
+	 * all browsers.
+	 */
+
+	sub,
+	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
+	/* Embedded content
+	   ===================================================================== */
+
+	/**
+	 * Remove the border on images inside links in IE 10-.
+	 */
+
+	img {
+		border-style: 0;
+	}
+
+	/* Forms
+	   ===================================================================== */
+
+	/**
+	 * Change font properties to `inherit` in all browsers (opinionated).
 	 */
 
 	button,
 	input,
-	optgroup,
 	select,
 	textarea {
-		color: inherit; /* 1 */
-		font: inherit; /* 2 */
-		margin: 0; /* 3 */
+		font: inherit;
 	}
 
 	/**
-	 * Address `overflow` set to `hidden` in IE 8/9/10/11.
+	 * Restore the font weight unset by the previous rule.
 	 */
 
-	button {
+	optgroup {
+		font-weight: bold;
+	}
+
+	/**
+	 * Show the overflow in IE.
+	 * 1. Show the overflow in Edge.
+	 * 2. Show the overflow in Edge, Firefox, and IE.
+	 */
+
+	button,
+	input, /* 1 */
+	select { /* 2 */
 		overflow: visible;
 	}
 
 	/**
-	 * Address inconsistent `text-transform` inheritance for `button` and `select`.
-	 * All other form control elements do not inherit `text-transform` values.
-	 * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
-	 * Correct `select` style inheritance in Firefox.
+	 * Remove the margin in Safari.
+	 * 1. Remove the margin in Firefox and Safari.
 	 */
 
 	button,
-	select {
+	input,
+	select,
+	textarea { /* 1 */
+		margin: 0;
+	}
+
+	/**
+	 * Remove the inheritance of text transform in Edge, Firefox, and IE.
+	 * 1. Remove the inheritance of text transform in Firefox.
+	 */
+
+	button,
+	select { /* 1 */
 		text-transform: none;
 	}
 
 	/**
-	 * Remove inner padding and border in Firefox 4+.
+	 * Change the cursor in all browsers (opinionated).
+	 */
+
+	button,
+	[type="button"],
+	[type="reset"],
+	[type="submit"] {
+		cursor: pointer;
+	}
+
+	/**
+	 * Restore the default cursor to disabled elements unset by the previous rule.
+	 */
+
+	[disabled] {
+		cursor: default;
+	}
+
+	/**
+	 * Remove the inner border and padding in Firefox.
 	 */
 
 	button::-moz-focus-inner,
@@ -76,12 +198,15 @@ $_n-normalize_applied: false !default;
 	}
 
 	/**
-	 * Remove default vertical scrollbar in IE 8/9/10/11.
+	 * Remove the default vertical scrollbar in IE.
 	 */
 
 	textarea {
 		overflow: auto;
 	}
+
+	/* Next specific stuff
+	   ===================================================================== */
 
 	/**
 	 * Standardise outline styles
@@ -93,4 +218,5 @@ $_n-normalize_applied: false !default;
 	}
 
 	$_n-normalize_applied: true !global;
+
 }
